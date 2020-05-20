@@ -6,7 +6,18 @@ from emallapp.models import Register
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.html')
+    print("new")
+    form = regForm()
+    if request.method == 'POST':
+        print("called")
+        form = regForm(request.POST, request.FILES)
+        print("ok")
+        if form.is_valid():
+            form.save()
+            return redirect('category')
+        else:
+            return HttpResponse("*****ERROR IN VALIDATION******")
+    return render(request, 'index.html',{"form":form})
 
 
 def category(request):
@@ -25,6 +36,7 @@ def category(request):
 
 
 def cart(request):
+
     return render(request, 'cart.html')
 
 
@@ -34,4 +46,3 @@ def payment(request):
 
 def finale(request):
     return render(request, 'finale.html')
-
