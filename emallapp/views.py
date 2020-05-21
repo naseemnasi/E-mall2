@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect, HttpResponse
-from emallapp.forms import regForm
-from emallapp.models import Register
+from emallapp.forms import regForm,payForm
+from emallapp.models import Register,payment
 
 
 # Create your views here.
@@ -14,7 +14,7 @@ def index(request):
         print("ok")
         if form.is_valid():
             form.save()
-            return redirect('category')
+            return redirect('index')
         else:
             return HttpResponse("*****ERROR IN VALIDATION******")
     return render(request, 'index.html',{"form":form})
@@ -41,7 +41,19 @@ def cart(request):
 
 
 def payment(request):
-    return render(request, 'payment.html')
+    print("enter to 11111111111")
+    form = payForm()
+    if request.method == 'POST':
+        print("enter to 222222222222222222")
+        form = payForm(request.POST, request.FILES)
+        if form.is_valid():
+            print("enter to 3333333333333333333333")
+            form.save()
+            return redirect('finale')
+        else:
+            print("enter to 44444444444444444")
+            return("*****ERROR IN VALIDATION******")
+    return render(request, 'payment.html',{"form":form})
 
 
 def finale(request):
