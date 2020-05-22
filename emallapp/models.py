@@ -17,8 +17,8 @@ class Register(models.Model):
 
 class payment(models.Model):
     nearestloc = models.ForeignKey(nearestloc,on_delete=models.CASCADE,)
-    qty = models.IntegerField()
-    deliveryMode = models.CharField(max_length=50)
+    # qty = models.IntegerField()
+    # deliveryMode = models.CharField(max_length=50)
     name = models.CharField(max_length=100)
     address = models.CharField(max_length=100)
     phone = models.IntegerField()

@@ -36,7 +36,7 @@ def category(request):
 
 
 def cart(request):
-
+    return redirect("pay")
     return render(request, 'cart.html')
 
 
@@ -50,9 +50,8 @@ def payment(request):
             print("enter to 3333333333333333333333")
             form.save()
             return redirect('finale')
-        else:
-            print("enter to 44444444444444444")
-            return("*****ERROR IN VALIDATION******")
+        # else:
+        #     return("*****ERROR IN VALIDATION******")
     return render(request, 'payment.html',{"form":form})
 
 
