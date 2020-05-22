@@ -58,3 +58,6 @@ def payment(request):
 
 def finale(request):
     return render(request, 'finale.html')
+
+def adminpro(request):
+    return render(request, 'addpro.html')
