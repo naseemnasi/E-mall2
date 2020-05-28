@@ -2,83 +2,110 @@
 {% extends 'index.html' %}
 {% block content %}
 
+  <div class="features-box">
+      <div class="container">
+
 
     <!-- Features Box -->
-    <div class="features-box">
-        <div class="container">
+
 
                 <!-- </div> -->
 
 
 
                 <!-- <div class="col-lg-6"> -->
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="single-box-item first-box">
-                              <a href="vegfruit" class="primary-btn">
-                                <img src="static/media/category/fruit_and_vegetables.jpg" alt="">
+<!--                    <div class="row">-->
+<!--                        <div class="col-lg-6">-->
+<!--                            <div class="single-box-item first-box">-->
+<!--                              <a href="vegfruit" class="primary-btn">-->
+<!--                                <img src="static/media/category/fruit_and_vegetables.jpg" alt="">-->
 
-                                  <div class="box-text" style="right: 0px;left: 45px;">
+<!--                                  <div class="box-text" style="right: 0px;left: 45px;">-->
 
-                                    <h2  style="color:white;">Vegitables & Fruits</h2>
-                                    <span class="trend-alert">Freshness is guarantee</span>
+<!--                                    <h2  style="color:white;">Vegitables & Fruits</h2>-->
+<!--                                    <span class="trend-alert">Freshness is guarantee</span>-->
 
-                              </div>
-                              </a>
-                            </div>
-                          </div>
-                          <div class="col-lg-6">
-                              <div class="single-box-item second-box">
-                                <a href="footwear" class="primary-btn">
-                                  <img src="static/media/category/dresses.jpg" alt="">
-                                  <div class="box-text"  style="right: 0px;left: 45px;">
-                                      <span class="trend-year">2020 Trending</span>
-                                      <h2 style="color:white;">Dresses</h2>
-                                      <span class="trend-alert">New treands</span><br>
+<!--                              </div>-->
+<!--                              </a>-->
+<!--                            </div>-->
+<!--                          </div>-->
+<!--                          <div class="col-lg-6">-->
+<!--                              <div class="single-box-item second-box">-->
+<!--                                <a href="footwear" class="primary-btn">-->
+<!--                                  <img src="static/media/category/dresses.jpg" alt="">-->
+<!--                                  <div class="box-text"  style="right: 0px;left: 45px;">-->
+<!--                                      <span class="trend-year">2020 Trending</span>-->
+<!--                                      <h2 style="color:white;">Dresses</h2>-->
+<!--                                      <span class="trend-alert">New treands</span><br>-->
 
-                                  </div>
-                                  </a>
-                              </div>
-                          </div>
-                        </div>
+<!--                                  </div>-->
+<!--                                  </a>-->
+<!--                              </div>-->
+<!--                          </div>-->
+<!--                        </div>-->
+
+<!--                        <div class="row">-->
+
+
+<!--                            <div class="col-lg-6">-->
+<!--                                &lt;!&ndash; <div class="row"> &ndash;&gt;-->
+<!--                                    &lt;!&ndash; <div class="col-lg-12"> &ndash;&gt;-->
+<!--                                        <div class="single-box-item first-box">-->
+<!--                                          <a href="stationary" class="primary-btn">-->
+<!--                                            <img src="static/media/category/stationary-product.jpg" alt="">-->
+
+<!--                                            <div class="box-text"  style="right: 0px;left: 45px;">-->
+<!--                                                <span class="trend-year">2020 Items</span>-->
+<!--                                                <h2 style="color:white;">STATIONARY</h2>-->
+<!--                                                <span class="trend-alert">Fast moving</span>-->
+<!--                                            </div>-->
+<!--                                            </a>-->
+<!--                                        </div>-->
+<!--                                      </div>-->
+<!--                                    &lt;!&ndash; </div/> &ndash;&gt;-->
+<!--                                    <div class="col-lg-6">-->
+<!--                                        <div class="single-box-item second-box">-->
+<!--                                          <a href="footwear" class="primary-btn">-->
+<!--                                            <img src="static/media/category/footwear-product.jpg" alt="">-->
+
+<!--                                            <div class="box-text"  style="right: 0px;left: 45px;">-->
+<!--                                                <span class="trend-year">2020 Trend</span>-->
+<!--                                                <h2 style="color:white;">Footwear</h2>-->
+<!--                                                <span class="trend-alert">New treands</span><br>-->
+
+<!--                                            </div>-->
+<!--                                            </a>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+
 
                         <div class="row">
+                            {% for category in categories %}
+                        <div class="col-lg-6">
+                            <div class="single-box-item first-box">
 
+                              <a href="{{category.link}}" class="primary-btn">
+                                  <img src="{{category.img_url}}" alt="">
 
-                            <div class="col-lg-6">
-                                <!-- <div class="row"> -->
-                                    <!-- <div class="col-lg-12"> -->
-                                        <div class="single-box-item first-box">
-                                          <a href="stationary" class="primary-btn">
-                                            <img src="static/media/category/stationary-product.jpg" alt="">
+                                  <div class="box-text" style="right: 0px;left: 45px;">
+                                    <span class="trend-year">{{category.description1}}</span>
+                                    <h2  style="color:white;">{{category.name}}</h2>
+                                    <span class="trend-alert">{{category.description}}</span>
+                                  </div>
+                              </a>
 
-                                            <div class="box-text"  style="right: 0px;left: 45px;">
-                                                <span class="trend-year">2020 Items</span>
-                                                <h2 style="color:white;">STATIONARY</h2>
-                                                <span class="trend-alert">Fast moving</span>
-                                            </div>
-                                            </a>
-                                        </div>
-                                      </div>
-                                    <!-- </div/> -->
-                                    <div class="col-lg-6">
-                                        <div class="single-box-item second-box">
-                                          <a href="footwear" class="primary-btn">
-                                            <img src="static/media/category/footwear-product.jpg" alt="">
-
-                                            <div class="box-text"  style="right: 0px;left: 45px;">
-                                                <span class="trend-year">2020 Trend</span>
-                                                <h2 style="color:white;">Footwear</h2>
-                                                <span class="trend-alert">New treands</span><br>
-
-                                            </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-
-
+                            </div>
+                        </div>
+                        {% endfor %}
                       </div>
-                    </div>
-              
+                  </div>
+                </div>
+
+
+
+
+
+
+
 {% endblock %}

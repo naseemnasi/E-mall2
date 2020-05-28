@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect, HttpResponse
-from emallapp.forms import regForm,payForm
-from emallapp.models import Register,payment
+from emallapp.forms import regForm, payForm
+from emallapp.models import Register, payment,Category
 
 
 # Create your views here.
@@ -17,26 +17,17 @@ def index(request):
             return redirect('index')
         else:
             return HttpResponse("*****ERROR IN VALIDATION******")
-    return render(request, 'index.html',{"form":form})
+    return render(request, 'index.html', {"form": form})
 
 
 def category(request):
-    print("new")
-    form = regForm()
-    if request.method == 'POST':
-        print("called")
-        form = regForm(request.POST, request.FILES)
-        print("ok")
-        if form.is_valid():
-            form.save()
-            return redirect('category')
-        else:
-            return HttpResponse("*****ERROR IN VALIDATION******")
-    return render(request, 'category.html',{"form":form})
+    categories = Category.objects.all()
+    return render(request, 'category.html', {"categories":categories})
 
 
 def cart(request):
-    return redirect("pay")
+    if request.method == 'POST':
+        return redirect('pay')
     return render(request, 'cart.html')
 
 
@@ -52,11 +43,12 @@ def payment(request):
             return redirect('finale')
         # else:
         #     return("*****ERROR IN VALIDATION******")
-    return render(request, 'payment.html',{"form":form})
+    return render(request, 'payment.html', {"form": form})
 
 
 def finale(request):
     return render(request, 'finale.html')
+
 
 def adminpro(request):
     return render(request, 'addpro.html')
