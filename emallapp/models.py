@@ -1,3 +1,4 @@
+from django.core.validators import validate_comma_separated_integer_list
 from django.db import models
 
 
@@ -41,3 +42,13 @@ class payment(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class addproduct(models.Model):
+    pname = models.CharField(max_length=255)
+    pimage = models.ImageField(null=True,blank=True)
+    pdesc = models.CharField(max_length=2083)
+    price = models.IntegerField()
+    size = models.CharField(max_length=40,validators=[validate_comma_separated_integer_list],blank=True)
+    stock = models.IntegerField()
+

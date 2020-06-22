@@ -1,279 +1,141 @@
-{ % extends 'index.html'% }
-{% block content %}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html class="supernova"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Product Info:</title>
+<link href="https://cdn.jotfor.ms/static/formCss.css?3.3.18617" rel="stylesheet" type="text/css" />
+<link type="text/css" rel="stylesheet" href="https://cdn.jotfor.ms/css/styles/nova.css?3.3.18617" />
+<link type="text/css" rel="stylesheet" href="https://cdn.jotfor.ms/themes/CSS/566a91c2977cdfcd478b4567.css?themeRevisionID=5dca5ac9a5e86d17235d90c1"/>
+<style type="text/css">
+    .form-all{
+        margin:0px auto;
+        padding-top:0px;
+        width:690px;
+        color:#555 !important;
+        font-family:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, sans-serif;
+        font-size:14px;
+    }
+    .form-radio-item label, .form-checkbox-item label, .form-grading-label, .form-header{
+        color: false;
+    }
+</style>
+<style type="text/css" id="form-designer-style">
+    /* Injected CSS Code */
+/*PREFERENCES STYLE*/
+    .form-all {
+      font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Tahoma, sans-serif, sans-serif;
+    }
+    .form-all .qq-upload-button,
+    .form-all .form-submit-button,
+    .form-all .form-submit-reset,
+    .form-all .form-submit-print {
+      font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Tahoma, sans-serif, sans-serif;
+    }
+    .form-all .form-pagebreak-back-container,
+    .form-all .form-pagebreak-next-container {
+      font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Tahoma, sans-serif, sans-serif;
+    }
+    .form-header-group {
+      font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Tahoma, sans-serif, sans-serif;
+    }
+    .form-label {
+      font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Tahoma, sans-serif, sans-serif;
+    }
+  /*PREFERENCES STYLE*//*__INSPECT_SEPERATOR__*/
+.form-label.form-label-auto {
 
+        display: inline-block;
+        float: left;
+        text-align: left;
 
-<div class="breadcrumbs">
-        <div class="breadcrumbs-inner">
-            <div class="row m-0">
-                <div class="col-sm-4">
-                    <div class="page-header float-left">
-                        <div class="page-title">
+      }
+    /* Injected CSS Code */
+</style>
+</head>
+<body>
+<form class="jotform-form" method="POST" enctype="multipart/form-data">{% csrf_token %}
 
-                        </div>
-                    </div>
-                </div>
-
+  <div role="main" class="form-all">
+    <ul class="form-section page-section">
+      <li id="cid_8" class="form-input-wide" data-type="control_head">
+        <div class="form-header-group  header-large">
+          <div class="header-text httal htvam">
+            <h1 id="header_8" class="form-header" data-component="header">
+              Product Info:
+            </h1>
+            <div id="subHeader_8" class="form-subHeader">
+              Add a new product.
             </div>
+          </div>
         </div>
-        {% if form.errors %}
-        {% for field in form %}
-            {% for error in field.errors %}
-                <div class="alert alert-danger">
-                    <strong>{{ error|escape }}</strong>
-                </div>
-            {% endfor %}
-        {% endfor %}
-        {% for error in form.non_field_errors %}
-            <div class="alert alert-danger">
-                <strong>{{ error|escape }}</strong>
-            </div>
-        {% endfor %}
-        {% endif %}
-        <div class="content">
-            <div class="animated fadeIn">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="card">
-                            <div class="card-header">
-                                <strong class="card-title">BASIC INFO</strong>
-                            </div>
-                            <div class="card-body">
-
-                                <div id="pay-invoice">
-                                    <div class="card-body">
-
-
-                                        <form action="#" method="post" enctype="multipart/form-data">
-
-
-
-                                            {% csrf_token %}
-                                            <div class="form-group has-success">
-                                                <label for="{{ form.empid.name }}" class="control-label mb-1">Employee ID</label>
-                                                <input type="text"
-                                                       name="{{ form.empid.name }}"
-                                                       id="{{ form.empid.id_for_label }}"
-                                                       {% if form.fname.value != None %}value="{{ form.empid.value|stringformat:'s' }}"{% endif %}
-                                                       maxlength="{{ form.empid.field.max_length }}" {% if form.empid.field.required %}required{% endif %}
-                                                       class="form-control {{ form.empid.name }}"  data-val-required="Please enter first name" >
-                                                <span class="help-block field-validation-valid" data-valmsg-for="cc-name" data-valmsg-replace="true"></span>
-                                            </div>
-
-
-                                            <div class="form-group">
-                                                <label for="{{ form.fname.name }}" class="control-label mb-1">First Name</label>
-                                                <input type="text"
-                                                       name="{{ form.fname.name }}"
-                                                       id="{{ form.fname.id_for_label }}"
-                                                       {% if form.fname.value != None %}value="{{ form.fname.value|stringformat:'s' }}"{% endif %}
-                                                       maxlength="{{ form.fname.field.max_length }}" {% if form.fname.field.required %}required{% endif %}
-                                                       class="form-control {{ form.fname.name }}"  data-val-required="Please enter first name" >
-
-
-                                                <span class="help-block field-validation-valid" data-valmsg-for="{{ form.fname.name }}" data-valmsg-replace="true"></span>
-                                            </div>
-
-
-                                            <div class="form-group">
-                                                <label for="{{ form.lname.name }}" class="control-label mb-1">Last Name</label>
-                                                <input id="{{ form.lname.id_for_label }}" name="{{ form.lname.name }}" type="text" class="form-control {{ form.lname.name }}"{% if form.lname.value != None %}value="{{ form.lname.value|stringformat:'s' }}"{% endif %}
-                                                maxlength="{{ form.lname.field.max_length }}" {% if form.lname.field.required %}required{% endif %}
-                                                data-val-required="Please enter the name on card">
-                                                <span class="help-block field-validation-valid" data-valmsg-for="{{ form.lname.name }}" data-valmsg-replace="true"></span>
-                                            </div>
-
-
-
-
-                                            <div class="form-group">
-                                                <label for="{{ form.phone.name }}" class="control-label mb-1">Phone Number</label>
-                                                <input id="{{ form.phone.id_for_label }}" name="{{ form.phone.name }}" type="text" class="form-control {{ form.phone.name }}"
-                                                {% if form.phone.value != None %}value="{{ form.phone.value|stringformat:'s' }}"{% endif %}
-                                                maxlength="{{ form.phone.field.max_length }}" {% if form.phone.field.required %}required{% endif %}
-                                                data-val-required="Please enter the name on card"  >
-
-                                                <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
-                                            </div>
-
-
-
-                                            <div class="form-group">
-                                                <label for="{{ form.email.name }}" class="control-label mb-1">Email</label>
-                                                <input id="{{ form.email.id_for_label }}" name="{{ form.email.name }}" type="text" class="form-control {{ form.email.name }}"
-                                                {% if form.email.value != None %}value="{{ form.email.value|stringformat:'s' }}"{% endif %}
-                                                maxlength="{{ form.email.field.max_length }}" {% if form.email.field.required %}required{% endif %}>
-                                                <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
-                                            </div>
-
-                                                     <!-- {{ form.picture }} -->
-                                           <div class="form-group">
-                                                <label for="{{ form.picture.name }}" class="control-label mb-1">picture</label>
-                                                <input id="{{ form.picture.id_for_label }}" name="{{ form.picture.name }}" type="file" class="form-control {{ form.picture.name }}"
-                                                {% if form.email.value != None %}value="{{ form.email.value|stringformat:'s' }}"{% endif %}
-                                                maxlength="{{ form.picture.field.max_length }}" {% if form.email.field.required %}required{% endif %}>
-                                                <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
-
-
-                                            </div>
-
-
-                                            <div class="row form-group">
-                                                <div class="col col-md-3"><label for="{{ form.gender.name }}" class=" form-control-label">Gender</label></div>
-                                                <div class="col-12 col-md-9">
-                                                    <select name="{{ form.gender.name }}" id="{{ form.gender.id_for_label }}" class="form-control">
-                                                        {% for choice in form.gender.field.choices %}
-                                                            <option value="{{ choice.0 }}">{{ choice.1 }}</option>
-                                                        {% endfor %}
-                                                    </select>
-                                                </div>
-                                            </div>
-
-
-
-
-
-                                          </form>
-                                    </div>
-                                </div>
-                            </div>
-                            </div> <!-- .card -->
-                            </div><!--/.col-->
-                            <div class="col-lg-6">
-                                <div class="card">
-                                    <div class="card-header"><strong>Personal Info</strong></div>
-                                    <div class="card-body card-block">
-
-
-
-
-                                        <div class="row form-group">
-                                            <div class="col-8">
-                                                <div class="form-group"><label for="{{ form.address.name }}" class=" form-control-label">Address</label>
-                                                    <input id="{{ form.address.id_for_label }}" name="{{ form.address.name }}" type="text" class="form-control {{ form.address.name }}"
-                                                {% if form.address.value != None %}value="{{ form.address.value|stringformat:'s' }}"{% endif %}
-                                                maxlength="{{ form.address.field.max_length }}" {% if form.address.field.required %}required{% endif %}></div>
-                                            </div>
-
-
-                                            <div class="col-8">
-                                                <div class="form-group"><label for="{{ form.paddress.name }}" class=" form-control-label">Permenent Address</label>
-                                                    <input id="{{ form.paddress.id_for_label }}" name="{{ form.paddress.name }}" type="text" class="form-control {{ form.paddress.name }}"
-                                                {% if form.paddress.value != None %}value="{{ form.paddress.value|stringformat:'s' }}"{% endif %}
-                                                maxlength="{{ form.paddress.field.max_length }}" {% if form.paddress.field.required %}required{% endif %}></div>
-                                            </div>
-
-
-
-                                        </div>
-
-                                         <div class="col-8">
-                                                <div class="form-group"><label for="{{ form.dob.name }}" class=" form-control-label">Date of birth</label>
-                                                    <input id="{{ form.dob.id_for_label }}" name="{{ form.dob.name }}" type="text" class="form-control {{ form.dob.name }}"
-                                                {% if form.dob.value != None %}value="{{ form.dob.value|stringformat:'s' }}"{% endif %}
-                                                maxlength="{{ form.dob.field.max_length }}" {% if form.dob.field.required %}required{% endif %}></div>
-                                            </div>
-
-
-                                        <div class="col-8">
-                                               <div class="form-group"><label for="{{ form.mstatus.name }}" class=" form-control-label">Marital Status</label>
-                                                 <select name="{{ form.mstatus.name }}" id="{{ form.mstatus.id_for_label }}" class="form-control">
-                                                     {% for choice in form.mstatus.field.choices %}
-                                                         <option value="{{ choice.0 }}">{{ choice.1 }}</option>
-                                                     {% endfor %}
-                                                 </select>
-                                             </div>
-                                           </div>
-
-
-
-
-                                       <div class="form-group"><label for="{{ form.post.name }}" class=" form-control-label">Postal Code</label>
-                                                    <input id="{{ form.post.id_for_label }}" name="{{ form.post.name }}" type="text" class="form-control {{ form.post.name }}"
-                                                {% if form.post.value != None %}value="{{ form.post.value|stringformat:'s' }}"{% endif %}
-                                                maxlength="{{ form.post.field.max_length }}" {% if form.post.field.required %}required{% endif %}></div>
-
-
-                                         <div class="form-group"><label for="{{ form.city.name }}" class=" form-control-label">City</label>
-                                                    <input id="{{ form.city.id_for_label }}" name="{{ form.city.name }}" type="text" class="form-control {{ form.city.name }}"
-                                                {% if form.city.value != None %}value="{{ form.city.value|stringformat:'s' }}"{% endif %}
-                                                maxlength="{{ form.city.field.max_length }}" {% if form.city.field.required %}required{% endif %}></div>
-
-                                        <div class="form-group"><label for="{{ form.country.name }}" class=" form-control-label">Country</label>
-                                                    <input id="{{ form.country.id_for_label }}" name="{{ form.country.name }}" type="text" class="form-control {{ form.country.name }}"
-                                                {% if form.country.value != None %}value="{{ form.country.value|stringformat:'s' }}"{% endif %}
-                                                maxlength="{{ form.country.field.max_length }}" {% if form.country.field.required %}required{% endif %}></div>
-                                                <div class="col-lg-6">
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        </div>
-                                         <div class="col-lg-6">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <strong>Work Info</strong>
-                                    </div>
-                                    <div class="card-body card-block">
-
-
-
-                                            <div class="row form-group">
-                                                <div class="col col-md-3"><label for="{{ form.designation.name }}" class=" form-control-label">Designation</label></div>
-                                                <div class="col-12 col-md-9">
-                                                  <select name="{{ form.designation.name }}" id="{{ form.designation.id_for_label }}" class="form-control">
-                                                      {% for choice in form.designation.field.choices %}
-                                                          <option value="{{ choice.0 }}">{{ choice.1 }}</option>
-                                                      {% endfor %}
-                                                  </select>
-                                                </div>
-                                            </div>
-
-                                            <div class="row form-group">
-                                                <div class="col col-md-3"><label for="{{ form.department.name }}" class=" form-control-label">Department</label></div>
-                                                <div class="col-12 col-md-9">
-                                                  <select name="{{ form.department.name }}" id="{{ form.department.id_for_label }}" class="form-control">
-                                                      {% for choice in form.department.field.choices %}
-                                                          <option value="{{ choice.0 }}">{{ choice.1 }}</option>
-                                                      {% endfor %}
-                                                  </select>
-                                                </div>
-                                            </div>
-
-
-
-                                            <div class="row form-group">
-                                                <div class="col col-md-3"><label for="{{ form.doj.name }}" class=" form-control-label">Date Of Join</label></div>
-                                                <div class="col-12 col-md-9"><input id="{{ form.doj.id_for_label }}" name="{{ form.doj.name }}" type="text" class="form-control {{ form.doj.name }}"
-                                                {% if form.doj.value != None %}value="{{ form.doj.value|stringformat:'s' }}"{% endif %}
-                                                maxlength="{{ form.doj.field.max_length }}" {% if form.doj.field.required %}required{% endif %}></div>
-                                            </div>
-
-                                            <div class="row form-group">
-                                                <div class="col col-md-3"><label for="{{ form.wemail.name }}" class=" form-control-label">Work Email</label></div>
-                                                <div class="col-12 col-md-9"><input id="{{ form.wemail.id_for_label }}" name="{{ form.wemail.name }}" type="text" class="form-control {{ form.wemail.name }}"
-                                                {% if form.wemail.value != None %}value="{{ form.wemail.value|stringformat:'s' }}"{% endif %}
-                                                maxlength="{{ form.wemail.field.max_length }}" {% if form.wemail.field.required %}required{% endif %}></div>
-                                            </div>
-                                            <div class="row form-group">
-                                                <div class="col col-md-3"><label for="{{ form.wphone.name }}" class="form-control-label">Work Phone</label></div>
-                                                <div class="col-12 col-md-9"><input id="{{ form.wphone.id_for_label }}" name="{{ form.wphone.name }}" type="text" class="form-control {{ form.wphone.name }}"
-                                                {% if form.wphone.value != None %}value="{{ form.wphone.value|stringformat:'s' }}"{% endif %}
-                                                maxlength="{{ form.wphone.field.max_length }}" {% if form.wphone.field.required %}required{% endif %}></div>
-                                            </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-{% endblock%}
+      </li>
+      <li class="form-line jf-required" data-type="control_textbox" id="id_1">
+        <label class="form-label form-label-left form-label-auto" id="label_1" for="input_1">
+          Product Name
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div id="cid_1" class="form-input jf-required">
+          <input type="text" id="input_1" name="pname" data-type="input-textbox" class="form-textbox validate[required]" size="20" value="" placeholder=" " data-component="textbox" aria-labelledby="label_1" required="" />
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_textbox" id="id_10">
+        <label class="form-label form-label-left form-label-auto" id="label_10" for="input_10">
+          Image
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div id="cid_10" class="form-input jf-required">
+          <input type="file" id="myFile" name="pimage" data-type="input-textbox" class="form-textbox validate[required]" size="20" value="" data-component="textbox" aria-labelledby="label_10" required="" />
+        </div>
+      </li>
+      <li class="form-line" data-type="control_textarea" id="id_2">
+        <label class="form-label form-label-left form-label-auto" id="label_2" for="input_2"> Description (Optional) </label>
+        <div id="cid_2" class="form-input">
+          <textarea id="input_2" class="form-textarea" name="pdesc" cols="30" rows="3" data-component="textarea" aria-labelledby="label_2"></textarea>
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_textbox" id="id_3">
+        <label class="form-label form-label-left form-label-auto" id="label_3" for="input_3">
+          Price
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div id="cid_3" class="form-input jf-required">
+          <input type="text" id="input_3" name="price" data-type="input-textbox" class="form-textbox validate[required]" size="5" value="" placeholder=" " data-component="textbox" aria-labelledby="label_3" required="" />
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_textarea" id="id_6">
+        <label class="form-label form-label-left form-label-auto" id="label_6" for="input_6">
+          Sizes
+        </label>
+        <div id="cid_6" class="form-input jf-required">
+          <textarea id="input_6" class="form-textarea validate[required]" name="size" cols="30" rows="5" data-component="textarea" required="" aria-labelledby="label_6"></textarea>
+        </div>
+      </li>
+       <li class="form-line jf-required" data-type="control_textbox" id="id_4">
+        <label class="form-label form-label-left form-label-auto" id="label_4" for="input_3">
+          Stock
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div id="cid_4" class="form-input jf-required">
+          <input type="text" id="input_4" name="stock" data-type="input-textbox" class="form-textbox validate[required]" size="5" value="" placeholder=" " data-component="textbox" aria-labelledby="label_3" required="" />
+        </div>
+      </li>
+      <li class="form-line" data-type="control_button" id="id_7">
+        <div id="cid_7" class="form-input-wide">
+          <div style="text-align:center" data-align="center" class="form-buttons-wrapper form-buttons-center   jsTest-button-wrapperField">
+            <button id="input_7" type="submit" class="form-submit-button submit-button jf-form-buttons jsTest-submitField" data-component="button" data-content="">
+              Submit
+            </button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</form></body>
+</html>
