@@ -1,3 +1,4 @@
+from django.core.validators import validate_comma_separated_integer_list
 from django.db import models
 
 
@@ -30,6 +31,10 @@ class Register(models.Model):
     def __str__(self):
         return self.name
 
+# class cart(models.Model):
+#     pname=models.ForeignKey(product, on_delete=models.CASCADE, )
+#
+#
 
 class payment(models.Model):
     nearestloc = models.ForeignKey(nearestloc, on_delete=models.CASCADE, )
@@ -41,3 +46,13 @@ class payment(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class product(models.Model):
+    c_name = models.ForeignKey(Category, on_delete=models.CASCADE, )
+    pname = models.CharField(max_length=255)
+    pimage = models.ImageField(null=True,blank=True)
+    pdesc = models.CharField(max_length=2083)
+    price = models.IntegerField()
+    size = models.CharField(max_length=40,blank=True)
+    stock = models.IntegerField()

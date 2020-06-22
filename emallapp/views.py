@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect, HttpResponse
-from emallapp.forms import regForm, payForm
-from emallapp.models import Register, payment,Category
+from emallapp.forms import regForm, payForm, productForm
+from emallapp.models import Register, payment,Category,product
 
 
 # Create your views here.
@@ -51,4 +51,14 @@ def finale(request):
 
 
 def adminpro(request):
-    return render(request, 'addpro.html')
+    print("new")
+    form = productForm()
+    if request.method == 'POST':
+        print("called")
+        form = productForm(request.POST, request.FILES)
+        print("ok")
+        if form.is_valid():
+            form.save()
+        else:
+            return HttpResponse("*****ERROR IN VALIDATION******")
+    return render(request, 'addpro.html',{"form":form})
