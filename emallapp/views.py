@@ -1,11 +1,13 @@
+from django.db.models import Q
 from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect, HttpResponse
 from emallapp.forms import regForm, payForm, productForm
-from emallapp.models import Register, payment,Category,product
+from emallapp.models import Register, payment, Category, product
 
 
 # Create your views here.
-def index(request):
+
+def register(request):
     print("new")
     form = regForm()
     if request.method == 'POST':
@@ -14,15 +16,23 @@ def index(request):
         print("ok")
         if form.is_valid():
             form.save()
-            return redirect('index')
+            return redirect('category')
         else:
             return HttpResponse("*****ERROR IN VALIDATION******")
-    return render(request, 'index.html', {"form": form})
+    return render(request, 'register.html', {"form": form})
+
+
+def login(request):
+    return render(request, "login.html")
+
+
+def index(request):
+    return render(request, 'index.html')
 
 
 def category(request):
     categories = Category.objects.all()
-    return render(request, 'category.html', {"categories":categories})
+    return render(request, 'category.html', {"categories": categories})
 
 
 def cart(request):
@@ -61,4 +71,4 @@ def adminpro(request):
             form.save()
         else:
             return HttpResponse("*****ERROR IN VALIDATION******")
-    return render(request, 'addpro.html',{"form":form})
+    return render(request, 'addpro.html', {"form": form})

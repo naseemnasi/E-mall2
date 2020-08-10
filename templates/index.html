@@ -74,81 +74,8 @@
                 </a>
             </div>
             <div class="user-access">
-                <a href="#" data-toggle="modal" data-target="#myModal" id="myBtn">Register</a>
-                <!-- Modal -->
-                <div class="modal fade" id="myModal" role="dialog">
-                    <div class="modal-dialog">
-
-                        <!-- Modal content-->
-                        <div class="modal-content">
-                            <div class="modal-header" style="background-color: #fff;text-align: center;font-size:30px;">
-                                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
-                                <h4 style="font-family:Arial Black;"><strong> Register</strong></h4>
-                            </div>
-                            <div class="modal-body">
-                                <form method="POST" enctype="multipart/form-data" role="form">{% csrf_token %}
-                                     <div class="form-group">
-                                        <label for="{{ form.name.name }}"><span class="glyphicon glyphicon-user"></span> Name</label>
-                                         <input type="text" class="form-control {{ form.name.name }}" id="{{ form.name.id_for_label }}" name="{{ form.name.name }}" placeholder="Enter name"
-                                          {% if form.name.value != None %}value="{{ form.name.value|stringformat:'s' }}"{% endif %}
-                                          maxlength="{{ form.name.field.max_length }}" {% if form.name.field.required %}required{% endif %}>
-                                     </div>
-                                    <div class="form-group">
-                                        <label for="{{ form.email.name }}"><span class="glyphicon glyphicon-envelope"></span> Email</label>
-                                        <input type="email"  class="form-control {{ form.email.name }}" id="{{ form.email.name }}" name="{{ form.email.name }}" placeholder="Enter email"
-                                          {% if form.email.value != None %}value="{{ form.email.value|stringformat:'s' }}"{% endif %}
-                                          maxlength="{{ form.email.field.max_length }}" {% if form.email.field.required %}required{% endif %}>
-                                     </div>
-                                    <div class="form-group">
-                                        <label for="{{ form.phone.name }}"><span class="glyphicon glyphicon-earphone"></span> Phone</label>
-                                        <input type="text" class="form-control {{ form.phone.name }}" id="{{ form.phone.name }}" name="{{ form.phone.name }}" placeholder="Enter phone number">
-                                     </div>
-                                    <div class="form-group">
-                                        <label for="{{ form.password.name }}"><span class="glyphicon glyphicon-lock"></span> Password</label>
-                                        <input type="password"  class="form-control {{ form.password.name }}" id="{{ form.password.name }}" name="{{ form.password.name }}" placeholder="Enter password"
-                                         {% if form.password.value != None %}value="{{ form.password.value|stringformat:'s' }}"{% endif %}
-                                          maxlength="{{ form.password.field.max_length }}" {% if form.password.field.required %}required{% endif %}>
-                                    </div>
-                                    <button type="submit" style="background-color:#6D6D64;" class="btn btn-block"><span style="color:black;font-size:20px" class="glyphicon glyphicon-ok-sign "></span></button>
-
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-<!--                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <a href="#" class="in" data-toggle="modal" data-target="#popUpWindow">Sign In</a>
-                <div class="modal fade" id="popUpWindow">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-
-                            <div class="modal-header"  style="background-color: #fff;text-align: center;font-size:30px;">
-                                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
-                                <h4 style="font-family:Arial Black;"><strong> Sign In</strong></h4>
-                            </div>
-
-                            <div class="modal-body">
-                                <form method="POST" enctype="multipart/form-data" role="form">{% csrf_token %}
-                                     <div class="form-group">
-                                        <label for="name"><span class="glyphicon glyphicon-user"></span> Name</label>
-                                         <input type="text" class="form-control" id="name"  placeholder="Enter name">
-                                     </div>
-                                     <div class="form-group">
-                                        <label for="pwd"><span class="glyphicon glyphicon-lock"></span> Password</label>
-                                         <input type="text" class="form-control" id="pwd"  placeholder="Password">
-                                     </div>
-                                     <button type="submit" style="background-color:#6D6D64;" class="btn btn-block"><span style="color:black;font-size:20px" class="glyphicon glyphicon-off "></span></button>
-                                </form>
-                            </div>
-
-                            <div class="modal-footer">
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <a href="register" >Register</a>
+                <a href="login" class="in">Log In</a>
             </div>
 
             <nav class="main-menu mobile-menu">
@@ -245,7 +172,7 @@
 
 
 <!-- Logo Section Begin -->
-<div class="logo-section spad">
+<div class="logo-section spad" style="padding-top:0px;padding-bottom:0px;">
     <div class="logo-items owl-carousel">
         <div class="logo-item">
             <img src="static/media/logos/logo-1.png" alt="">

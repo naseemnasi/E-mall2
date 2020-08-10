@@ -30,11 +30,13 @@ class Register(models.Model):
 
     def __str__(self):
         return self.name
-
-# class cart(models.Model):
-#     pname=models.ForeignKey(product, on_delete=models.CASCADE, )
 #
+# class Login(models.Model):
+#     email = models.CharField(max_length=15, unique=True)
+#     password = models.CharField(max_length=8)
 #
+#     def __str__(self):
+#         return self.email
 
 class payment(models.Model):
     nearestloc = models.ForeignKey(nearestloc, on_delete=models.CASCADE, )
