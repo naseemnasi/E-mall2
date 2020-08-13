@@ -72,3 +72,7 @@ def adminpro(request):
         else:
             return HttpResponse("*****ERROR IN VALIDATION******")
     return render(request, 'addpro.html', {"form": form})
+
+def vegfruit(request):
+    pro = product.objects.all()
+    return render(request, 'vegfruit.html', {"product":pro})

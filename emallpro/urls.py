@@ -29,5 +29,6 @@ urlpatterns = [
     path('pay', views.payment, name="pay"),
     path('finale', views.finale, name="finale"),
     path('adminpro', views.adminpro, name="adminpro"),
+    path('vegfruit', views.vegfruit, name='vegfruit'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

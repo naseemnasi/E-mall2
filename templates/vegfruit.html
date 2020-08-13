@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+{% block content %}
+
+<!-- section -->
+<div class="features-box">
+    <div class="container">
+        <div class="row">
+            {% for product in product %}
+            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                <div class="full">
+                    <div class="blog_section">
+                        <div class="blog_feature_img"> <img class="img-responsive" src="media/{{product.pimage}}" alt="#">
+                        </div>
+                        <div class="box-text">
+                            <p>{{p.pname}}</p>
+                            <div class="box-text">
+                                <p>{{p.pdesc}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
