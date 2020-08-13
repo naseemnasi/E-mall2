@@ -1,156 +1,187 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html class="supernova"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Product Info:</title>
-<link href="https://cdn.jotfor.ms/static/formCss.css?3.3.18617" rel="stylesheet" type="text/css" />
-<link type="text/css" rel="stylesheet" href="https://cdn.jotfor.ms/css/styles/nova.css?3.3.18617" />
-<link type="text/css" rel="stylesheet" href="https://cdn.jotfor.ms/themes/CSS/566a91c2977cdfcd478b4567.css?themeRevisionID=5dca5ac9a5e86d17235d90c1"/>
-<style type="text/css">
-    .form-all{
-        margin:0px auto;
-        padding-top:0px;
-        width:690px;
-        color:#555 !important;
-        font-family:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, sans-serif;
-        font-size:14px;
+<html class="supernova">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Product Info:</title>
+  <link href="https://cdn.jotfor.ms/static/formCss.css?3.3.18617" rel="stylesheet" type="text/css" />
+  <link type="text/css" rel="stylesheet" href="https://cdn.jotfor.ms/css/styles/nova.css?3.3.18617" />
+  <link type="text/css" rel="stylesheet"
+    href="https://cdn.jotfor.ms/themes/CSS/566a91c2977cdfcd478b4567.css?themeRevisionID=5dca5ac9a5e86d17235d90c1" />
+  <style type="text/css">
+    .form-all {
+      margin: 0px auto;
+      padding-top: 0px;
+      width: 690px;
+      color: #555 !important;
+      font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, sans-serif;
+      font-size: 14px;
     }
-    .form-radio-item label, .form-checkbox-item label, .form-grading-label, .form-header{
-        color: false;
+
+    .form-radio-item label,
+    .form-checkbox-item label,
+    .form-grading-label,
+    .form-header {
+      color: false;
     }
-</style>
-<style type="text/css" id="form-designer-style">
+  </style>
+  <style type="text/css" id="form-designer-style">
     /* Injected CSS Code */
-/*PREFERENCES STYLE*/
+    /*PREFERENCES STYLE*/
     .form-all {
       font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Tahoma, sans-serif, sans-serif;
     }
+
     .form-all .qq-upload-button,
     .form-all .form-submit-button,
     .form-all .form-submit-reset,
     .form-all .form-submit-print {
       font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Tahoma, sans-serif, sans-serif;
     }
+
     .form-all .form-pagebreak-back-container,
     .form-all .form-pagebreak-next-container {
       font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Tahoma, sans-serif, sans-serif;
     }
+
     .form-header-group {
       font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Tahoma, sans-serif, sans-serif;
     }
+
     .form-label {
       font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Tahoma, sans-serif, sans-serif;
     }
-  /*PREFERENCES STYLE*//*__INSPECT_SEPERATOR__*/
-.form-label.form-label-auto {
 
-        display: inline-block;
-        float: left;
-        text-align: left;
+    /*PREFERENCES STYLE*/
+    /*__INSPECT_SEPERATOR__*/
+    .form-label.form-label-auto {
 
-      }
+      display: inline-block;
+      float: left;
+      text-align: left;
+
+    }
+
     /* Injected CSS Code */
-</style>
+  </style>
 </head>
-<body>
-<form class="jotform-form" method="POST" enctype="multipart/form-data">{% csrf_token %}
 
-  <div role="main" class="form-all">
-    <ul class="form-section page-section">
-      <li id="cid_8" class="form-input-wide" data-type="control_head">
-        <div class="form-header-group  header-large">
-          <div class="header-text httal htvam">
-            <h1 id="header_8" class="form-header" data-component="header">
-              Product Info:
-            </h1>
-            <div id="subHeader_8" class="form-subHeader">
-              Add a new product.
+<body>
+  <form class="jotform-form" method="POST" enctype="multipart/form-data">{% csrf_token %}
+
+    <div role="main" class="form-all">
+      <ul class="form-section page-section">
+        <li id="cid_8" class="form-input-wide" data-type="control_head">
+          <div class="form-header-group  header-large">
+            <div class="header-text httal htvam">
+              <h1 id="header_8" class="form-header" data-component="header">
+                Product Info:
+              </h1>
+              <div id="subHeader_8" class="form-subHeader">
+                Add a new product.
+              </div>
             </div>
           </div>
-        </div>
-      </li>
-      <li class="form-line jf-required" data-type="control_textbox" id="id_13">
-        <label class="form-label form-label-left form-label-auto" id="label_1" for="input_1">
-          Category Name
-          <span class="form-required">
-            *
-          </span>
-        </label>
-        <div id="cid_1" class="form-input jf-required">
-          <select name="{{ form.c_name.name }}" id="{{ form.c_name.id_for_label }}" class="form-control">
-          {% for choice in form.c_name.field.choices %}
-          <option value="{{ choice.0 }}"> {{ choice.1 }} </option>
-          {% endfor %}
-        </select>
-        </div>
-      </li>
-      <li class="form-line jf-required" data-type="control_textbox" id="id_1">
-        <label class="form-label form-label-left form-label-auto" id="label_1" for="input_1">
-          Product Name
-          <span class="form-required">
-            *
-          </span>
-        </label>
-        <div id="cid_1" class="form-input jf-required">
-          <input type="text" id="input_1" name="pname" data-type="input-textbox" class="form-textbox validate[required]" size="20" value="" placeholder=" " data-component="textbox" aria-labelledby="label_1" required="" />
-        </div>
-      </li>
-      <li class="form-line jf-required" data-type="control_textbox" id="id_10">
-        <label class="form-label form-label-left form-label-auto" id="label_10" for="input_10">
-          Image
-          <span class="form-required">
-            *
-          </span>
-        </label>
-        <div id="cid_10" class="form-input jf-required">
-          <input type="file" id="myFile" name="pimage" data-type="input-textbox" class="form-textbox validate[required]" size="20" value="" data-component="textbox" aria-labelledby="label_10" required="" />
-        </div>
-      </li>
-      <li class="form-line" data-type="control_textarea" id="id_2">
-        <label class="form-label form-label-left form-label-auto" id="label_2" for="input_2"> Description (Optional) </label>
-        <div id="cid_2" class="form-input">
-          <textarea id="input_2" class="form-textarea" name="pdesc" cols="30" rows="3" data-component="textarea" aria-labelledby="label_2"></textarea>
-        </div>
-      </li>
-      <li class="form-line jf-required" data-type="control_textbox" id="id_3">
-        <label class="form-label form-label-left form-label-auto" id="label_3" for="input_3">
-          Price
-          <span class="form-required">
-            *
-          </span>
-        </label>
-        <div id="cid_3" class="form-input jf-required">
-          <input type="text" id="input_3" name="price" data-type="input-textbox" class="form-textbox validate[required]" size="5" value="" placeholder=" " data-component="textbox" aria-labelledby="label_3" required="" />
-        </div>
-      </li>
-      <li class="form-line jf-required" data-type="control_textarea" id="id_6">
-        <label class="form-label form-label-left form-label-auto" id="label_6" for="input_6">
-          Sizes
-        </label>
-        <div id="cid_6" class="form-input jf-required">
-          <textarea id="input_6" class="form-textarea validate[required]" name="size" cols="30" rows="5" data-component="textarea" required="" aria-labelledby="label_6"></textarea>
-        </div>
-      </li>
-       <li class="form-line jf-required" data-type="control_textbox" id="id_4">
-        <label class="form-label form-label-left form-label-auto" id="label_4" for="input_3">
-          Stock
-          <span class="form-required">
-            *
-          </span>
-        </label>
-        <div id="cid_4" class="form-input jf-required">
-          <input type="text" id="input_4" name="stock" data-type="input-textbox" class="form-textbox validate[required]" size="5" value="" placeholder=" " data-component="textbox" aria-labelledby="label_3" required="" />
-        </div>
-      </li>
-      <li class="form-line" data-type="control_button" id="id_7">
-        <div id="cid_7" class="form-input-wide">
-          <div style="text-align:center" data-align="center" class="form-buttons-wrapper form-buttons-center   jsTest-button-wrapperField">
-            <button id="input_7" type="submit" class="form-submit-button submit-button jf-form-buttons jsTest-submitField" data-component="button" data-content="">
-              Submit
-            </button>
+        </li>
+        <li class="form-line jf-required" data-type="control_textbox" id="id_13">
+          <label class="form-label form-label-left form-label-auto" id="label_1" for="input_1">
+            Category Name
+            <span class="form-required">
+              *
+            </span>
+          </label>
+          <div id="cid_1" class="form-input jf-required">
+            <select name="{{ form.c_name.name }}" id="{{ form.c_name.id_for_label }}" class="form-control">
+              {% for choice in form.c_name.field.choices %}
+              <option value="{{ choice.0 }}"> {{ choice.1 }} </option>
+              {% endfor %}
+            </select>
           </div>
-        </div>
-      </li>
-    </ul>
-  </div>
-</form></body>
+        </li>
+        <li class="form-line jf-required" data-type="control_textbox" id="id_1">
+          <label class="form-label form-label-left form-label-auto" id="label_1" for="input_1">
+            Product Name
+            <span class="form-required">
+              *
+            </span>
+          </label>
+          <div id="cid_1" class="form-input jf-required">
+            <input type="text" id="input_1" name="pname" data-type="input-textbox"
+              class="form-textbox validate[required]" size="20" value="" placeholder=" " data-component="textbox"
+              aria-labelledby="label_1" required="" />
+          </div>
+        </li>
+        <li class="form-line jf-required" data-type="control_textbox" id="id_10">
+          <label class="form-label form-label-left form-label-auto" id="label_10" for="input_10">
+            Image
+            <span class="form-required">
+              *
+            </span>
+          </label>
+          <div id="cid_10" class="form-input jf-required">
+            <input type="file" id="myFile" name="pimage" data-type="input-textbox"
+              class="form-textbox validate[required]" size="20" value="" data-component="textbox"
+              aria-labelledby="label_10" required="" />
+          </div>
+        </li>
+        <li class="form-line" data-type="control_textarea" id="id_2">
+          <label class="form-label form-label-left form-label-auto" id="label_2" for="input_2"> Description (Optional)
+          </label>
+          <div id="cid_2" class="form-input">
+            <textarea id="input_2" class="form-textarea" name="pdesc" cols="30" rows="3" data-component="textarea"
+              aria-labelledby="label_2"></textarea>
+          </div>
+        </li>
+        <li class="form-line jf-required" data-type="control_textbox" id="id_3">
+          <label class="form-label form-label-left form-label-auto" id="label_3" for="input_3">
+            Price
+            <span class="form-required">
+              *
+            </span>
+          </label>
+          <div id="cid_3" class="form-input jf-required">
+            <input type="text" id="input_3" name="price" data-type="input-textbox"
+              class="form-textbox validate[required]" size="5" value="" placeholder=" " data-component="textbox"
+              aria-labelledby="label_3" required="" />
+          </div>
+        </li>
+        <li class="form-line jf-required" data-type="control_textarea" id="id_6">
+          <label class="form-label form-label-left form-label-auto" id="label_6" for="input_6">
+            Sizes
+          </label>
+          <div id="cid_6" class="form-input jf-required">
+            <textarea id="input_6" class="form-textarea validate[required]" name="size" cols="30" rows="5"
+              data-component="textarea" required="" aria-labelledby="label_6"></textarea>
+          </div>
+        </li>
+        <li class="form-line jf-required" data-type="control_textbox" id="id_4">
+          <label class="form-label form-label-left form-label-auto" id="label_4" for="input_3">
+            Stock
+            <span class="form-required">
+              *
+            </span>
+          </label>
+          <div id="cid_4" class="form-input jf-required">
+            <input type="text" id="input_4" name="stock" data-type="input-textbox"
+              class="form-textbox validate[required]" size="5" value="" placeholder=" " data-component="textbox"
+              aria-labelledby="label_3" required="" />
+          </div>
+        </li>
+        <li class="form-line" data-type="control_button" id="id_7">
+          <div id="cid_7" class="form-input-wide">
+            <div style="text-align:center" data-align="center"
+              class="form-buttons-wrapper form-buttons-center   jsTest-button-wrapperField">
+              <button id="input_7" type="submit"
+                class="form-submit-button submit-button jf-form-buttons jsTest-submitField" data-component="button"
+                data-content="">
+                Submit
+              </button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </form>
+</body>
+
 </html>
